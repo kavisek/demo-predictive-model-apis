@@ -39,3 +39,9 @@ push: build
 
 attach:
 	docker exec -it $(CONTAINER_NAME) /bin/bash
+
+
+# FASTAPI COMMANDS
+
+uvicorn:
+	poetry run uvicorn --port 8080 --host 0.0.0.0 main:app --reload

@@ -1,12 +1,8 @@
-FROM python:3.9-alpine
-
-COPY . /app
+FROM python:3.10
 
 WORKDIR /app
 
-RUN apk update
-RUN apk add bash
-RUN apk add --update build-base linux-headers python3-dev py-psutil && rm -rf /var/cache/apk/*
-RUN pip install -r requirements.txt
+COPY . /app
+RUN pip3 install --no-cache-dir -r requirements.txt
 
-ENTRYPOINT ["/bin/bash"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]

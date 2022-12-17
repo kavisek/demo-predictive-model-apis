@@ -22,6 +22,8 @@ Faker = "^15.0.0"
 SQLAlchemy = "^1.4.41"
 ipykernel = "^6.16.0"
 databases = "^0.6.1"
+uvicorn = "^0.20.0"
+fastapi = "^0.88.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

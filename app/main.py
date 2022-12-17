@@ -1,21 +1,7 @@
-import logging
+from fastapi import FastAPI
 
-import numpy as np
-import pandas as pd
+app = FastAPI()
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s",
-)
-
-log = logging.getLogger(__name__)
-
-
-def main():
-    log.info("Done")
-    pass
-
-
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def read_root():
+    return "Welcome to Clustering Inference API :)"

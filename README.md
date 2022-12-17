@@ -1,17 +1,6 @@
-# template-postgrse-database.
+# demo-predictive-model-apis
 
-A template mysql database for local deveploment.
-
-## Local Datbase Credentials
-
-host: localhost
-port: 5432
-username: postgres
-password; docker
-
-# References
-
-- https://stackoverflow.com/questions/59466243/multiple-postgresql-database-creation-in-a-docker-compose-file
+Serving a model with FastAPI.
 
 
 # Predictive Models as Restful APIs
@@ -57,19 +46,3 @@ curl -X 'GET' \
   'http://localhost/users/?skip=0&limit=100' \
   -H 'accept: application/json'
 ```
-
-
-### Database Access
-
-To query your historal results via an IDE. You can query the database with the following credentials on your laptop.
-
-host: localhost
-port: 5284
-username: demo
-password: demo
-
-### References
-
-- https://fastapi.tiangolo.com/tutorial/sql-databases/
-- https://hub.docker.com/_/postgres
-- https://hub.docker.com/_/redis
