@@ -4,7 +4,7 @@
     "activityBar.background": "#544B3D",
     "titleBar.activeBackground": "#544B3D",
     "titleBar.activeForeground": "#FDFBF9"
-  }
+  },
   // Python Settings
   "python.defaultInterpreterPath": "${workspaceFolder}/app/.venv/bin/python3",
   "python.venvFolders": [
