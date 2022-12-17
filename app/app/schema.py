@@ -7,6 +7,7 @@ from typing import List, Optional
 
 
 class PredictionBase(BaseModel):
+    id: int
     variables: dict
 
     class Config:
