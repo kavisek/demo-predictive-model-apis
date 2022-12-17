@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from typing import List, Optional
+import uuid
 
 # NOTE: Pydantic model are used to validate the data that is passed to the API.
 # There are also use to generate the inputs and outputs of the API documentation.
@@ -7,7 +8,8 @@ from typing import List, Optional
 
 
 class PredictionBase(BaseModel):
-    id: int
+    # id: uuid.UUID
+    user_id: int
     variables: dict
 
     class Config:

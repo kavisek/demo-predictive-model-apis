@@ -8,7 +8,9 @@ Create Date: 2022-12-16 23:32:42.370987
 from alembic import op
 import sqlalchemy as sa
 
+import uuid
 from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy_utils import UUIDType
 
 # revision identifiers, used by Alembic.
 revision = '597e4584b904'
@@ -29,11 +31,12 @@ def upgrade() -> None:
     op.execute('drop table if exists predictions')
     op.create_table(
         "predictions",
-        sa.Column("id", sa.Integer, primary_key=True),
-        sa.Column("variables", JSONB, nullable=False, comment="Variables"),
+        sa.Column("id", UUIDType(binary=False), primary_key=True, default=uuid.uuid4),
+        sa.Column("user_id", sa.Integer, nullable=False),
+        sa.Column("variables", JSONB, nullable=False),
         sa.Column("prediction", sa.String(255)),
-        # sa.Column("created_at", sa.DateTime, server_default=sa.func.now()),
-        # sa.Column("updated_at", sa.DateTime, server_default=sa.func.now(), onupdate=sa.func.now()),
+        sa.Column("created_at", sa.DateTime, server_default=sa.func.now(), nullable=False),
+        sa.Column("updated_at", sa.DateTime, server_default=sa.func.now(), onupdate=sa.func.now(), nullable=False),
     )
 
 
