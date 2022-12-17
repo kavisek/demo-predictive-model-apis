@@ -1,9 +1,14 @@
-# Pydantic prediction model
 
 import sqlalchemy as sa
 from sqlalchemy.orm import relationship
 from app.db import Base
 from sqlalchemy.dialects.postgresql import JSONB
+
+
+# Models contains the ORM models for the database tables. These models are used to
+# represent the data in the database. Schema migration is handled by Alembic.
+# https://alembic.sqlalchemy.org/en/latest/tutorial.html
+# https://fastapi.tiangolo.com/tutorial/sql-databases/#create-the-sqlalchemy-orm-models
 
 class Predictions(Base):
     __tablename__ = "predictions"
