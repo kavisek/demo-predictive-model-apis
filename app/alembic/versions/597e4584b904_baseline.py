@@ -26,14 +26,14 @@ def upgrade() -> None:
     op.execute('create extension if not exists "pg_stat_statements"')
 
     # drop table if exists
-    op.execute('drop table if exists prediction')
+    op.execute('drop table if exists predictions')
     op.create_table(
-        "prediction",
+        "predictions",
         sa.Column("id", sa.Integer, primary_key=True),
         sa.Column("variables", JSONB, nullable=False, comment="Variables"),
         sa.Column("prediction", sa.String(255)),
-        sa.Column("created_at", sa.DateTime, server_default=sa.func.now()),
-        sa.Column("updated_at", sa.DateTime, server_default=sa.func.now(), onupdate=sa.func.now()),
+        # sa.Column("created_at", sa.DateTime, server_default=sa.func.now()),
+        # sa.Column("updated_at", sa.DateTime, server_default=sa.func.now(), onupdate=sa.func.now()),
     )
 
 

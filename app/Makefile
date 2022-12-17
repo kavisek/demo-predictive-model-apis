@@ -44,4 +44,4 @@ attach:
 # FASTAPI COMMANDS
 
 uvicorn:
-	poetry run uvicorn --port 8080 --host 0.0.0.0 main:app --reload
+	poetry run uvicorn --port 8080 --host 0.0.0.0 main:app --reload --log-level=debug
