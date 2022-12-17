@@ -18,8 +18,8 @@ shutdown:
 shutdown_volumes:
 	docker-compose down -v
 
-startup: shutdown
-	docker compose --profile db up
+start: shutdown
+	docker compose --profile api up -d
 
-
-	
+start_db: shutdown
+	docker compose  --profile db --profile cache up -d	
